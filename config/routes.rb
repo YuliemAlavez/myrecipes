@@ -10,7 +10,21 @@ Rails.application.routes.draw do
   end
   
   
+  resources :chefs, except: [:new]
   
+  
+  get '/register', to: 'chefs#new'
+  
+  
+  #login -> new session
+  get '/login', to: "logins#new"
+  post '/login', to: "logins#create"
+  
+  #logout -> close session
+  get '/logout', to: "logins#destroy"
+  
+  
+  #post login -> create session
   
   
   #get '/recipes', to: 'recipes#index'
