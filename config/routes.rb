@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   #logout -> close session
   get '/logout', to: "logins#destroy"
   
+  resources :styles, only: [:new, :create, :show]
+  resources :ingredients, only: [:new, :create, :show]
   
   #post login -> create session
   
